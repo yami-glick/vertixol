@@ -1,0 +1,17 @@
+# Email Configuration Example
+# Copy this file to .env and update with your actual credentials
+
+# Gmail Configuration
+EMAIL_USER=your-email@gmail.com
+EMAIL_PASS=your-app-password
+
+# Server Configuration
+PORT=8080
+NODE_ENV=development
+
+# Instructions:
+# 1. Create a Gmail account or use existing one
+# 2. Enable 2-factor authentication
+# 3. Generate an App Password (not your regular password)
+# 4. Replace the values above with your actual credentials
+# 5. Rename this file to .env 
