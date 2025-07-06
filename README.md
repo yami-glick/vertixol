@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Vertixol Website
 
 Professional website for Vertixol - Integrated Security & Management Solutions.
@@ -210,3 +211,6 @@ MIT License - see LICENSE file for details.
 ---
 
 **Vertixol** - Integrated Security & Management Solutions
+=======
+# vertixol
+>>>>>>> e1dfa170480f2611e186872231cca654caf33432
