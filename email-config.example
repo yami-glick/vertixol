@@ -1,17 +1,24 @@
-# Email Configuration Example
+# Email Configuration Example for Google Workspace OAuth2
 # Copy this file to .env and update with your actual credentials
 
-# Gmail Configuration
-EMAIL_USER=your-email@gmail.com
-EMAIL_PASS=your-app-password
+# Google Workspace Email Configuration (OAuth2)
+EMAIL_USER=info@vertixol.com.cy
+GOOGLE_CLIENT_ID=your-google-client-id
+GOOGLE_CLIENT_SECRET=your-google-client-secret
+GOOGLE_REFRESH_TOKEN=your-google-refresh-token
+GOOGLE_ACCESS_TOKEN=your-google-access-token
 
 # Server Configuration
 PORT=8080
 NODE_ENV=development
 
-# Instructions:
-# 1. Create a Gmail account or use existing one
-# 2. Enable 2-factor authentication
-# 3. Generate an App Password (not your regular password)
-# 4. Replace the values above with your actual credentials
-# 5. Rename this file to .env 
+# OAuth2 Setup Instructions:
+# 1. Go to Google Cloud Console (https://console.cloud.google.com/)
+# 2. Create a new project or select existing one
+# 3. Enable Gmail API for your project
+# 4. Create OAuth 2.0 credentials (Web application type)
+# 5. Add authorized redirect URIs (http://localhost:8080 for development)
+# 6. Download the credentials and use the client ID and secret
+# 7. Generate a refresh token using the OAuth2 playground or your own script
+# 8. Replace the values above with your actual credentials
+# 9. Rename this file to .env 

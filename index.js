@@ -12,12 +12,16 @@ app.use(express.static(path.join(__dirname, "public")));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
-// Email configuration
-const transporter = nodemailer.createTransport({
+// Email configuration with OAuth2 for Google Workspace
+const transporter = nodemailer.createTransporter({
   service: "gmail",
   auth: {
-    user: process.env.EMAIL_USER || "your-email@gmail.com",
-    pass: process.env.EMAIL_PASS || "your-app-password",
+    type: "OAuth2",
+    user: process.env.EMAIL_USER || "info@vertixol.com.cy",
+    clientId: process.env.GOOGLE_CLIENT_ID,
+    clientSecret: process.env.GOOGLE_CLIENT_SECRET,
+    refreshToken: process.env.GOOGLE_REFRESH_TOKEN,
+    accessToken: process.env.GOOGLE_ACCESS_TOKEN,
   },
 });
 

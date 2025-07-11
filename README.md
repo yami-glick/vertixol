@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+
 # Vertixol Website
 
 Professional website for Vertixol - Integrated Security & Management Solutions.
@@ -110,34 +111,54 @@ gcloud functions deploy vertixol-website \
 
 - `PORT`: Server port (default: 8080)
 - `NODE_ENV`: Environment mode (development/production)
-- `EMAIL_USER`: Gmail address for sending emails
-- `EMAIL_PASS`: Gmail app password (not regular password)
+- `EMAIL_USER`: Google Workspace email address (info@vertixol.com.cy)
+- `GOOGLE_CLIENT_ID`: OAuth2 client ID from Google Cloud Console
+- `GOOGLE_CLIENT_SECRET`: OAuth2 client secret from Google Cloud Console
+- `GOOGLE_REFRESH_TOKEN`: OAuth2 refresh token (generated via setup script)
+- `GOOGLE_ACCESS_TOKEN`: OAuth2 access token (generated via setup script)
 
-### Email Setup
+### Email Setup (Google Workspace OAuth2)
 
-1. **Gmail Configuration**:
+1. **Google Cloud Console Setup**:
 
-   - Use a Gmail account for sending emails
-   - Enable 2-factor authentication on your Gmail account
-   - Generate an App Password (Google Account → Security → App Passwords)
-   - Use the App Password, not your regular Gmail password
+   - Go to [Google Cloud Console](https://console.cloud.google.com/)
+   - Create a new project or select an existing one
+   - Enable the Gmail API for your project
+   - Go to "APIs & Services" → "Credentials"
+   - Create OAuth 2.0 credentials (Web application type)
+   - Add authorized redirect URIs: `http://localhost:8080` (for development)
+   - Download the credentials JSON file
 
 2. **Environment Setup**:
 
    ```bash
+   # Install dependencies
+   npm install
+
    # Copy the example configuration
    cp email-config.example .env
 
-   # Edit .env with your actual credentials
+   # Edit .env with your Google Cloud credentials
    nano .env
    ```
 
-3. **GCP Cloud Functions**:
+3. **Generate OAuth2 Tokens**:
+
+   ```bash
+   # Run the OAuth2 setup script
+   node generate-oauth-token.js
+
+   # Follow the instructions to get your authorization code
+   # Then run with the code:
+   node generate-oauth-token.js <AUTHORIZATION_CODE>
+   ```
+
+4. **GCP Cloud Functions**:
    - Set environment variables in the Cloud Functions console
    - Or use the gcloud command:
    ```bash
    gcloud functions deploy vertixol-website \
-     --set-env-vars EMAIL_USER=your-email@gmail.com,EMAIL_PASS=your-app-password
+     --set-env-vars EMAIL_USER=info@vertixol.com.cy,GOOGLE_CLIENT_ID=your-client-id,GOOGLE_CLIENT_SECRET=your-client-secret,GOOGLE_REFRESH_TOKEN=your-refresh-token
    ```
 
 ### Customization
@@ -210,7 +231,8 @@ MIT License - see LICENSE file for details.
 
 ---
 
-**Vertixol** - Integrated Security & Management Solutions
-=======
+# **Vertixol** - Integrated Security & Management Solutions
+
 # vertixol
->>>>>>> e1dfa170480f2611e186872231cca654caf33432
+
+> > > > > > > e1dfa170480f2611e186872231cca654caf33432
