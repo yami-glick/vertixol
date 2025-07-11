@@ -62,3 +62,4 @@ Thumbs.db
 
 # GCP specific
 .gcloudignore 
+.firebase/hosting.cHVibGlj.cache
