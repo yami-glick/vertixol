@@ -18,10 +18,9 @@ This is a static website built with HTML5 and served via Express.js, designed to
 
 ## Services Covered
 
-1. **Physical Security** - Comprehensive security solutions
-2. **Engineering Risk Assessment** - Building structure analysis
-3. **Risk Management** - Enterprise risk management frameworks
-4. **Management Consulting** - Strategic organizational consulting
+1. **Engineering Risk Assessment** - Building structure analysis
+2. **Risk Management** - Enterprise risk management frameworks
+3. **Management Consulting** - Strategic organizational consulting
 
 ## Local Development
 
@@ -174,7 +173,6 @@ gcloud functions deploy vertixol-website \
 vertixol/
 ├── public/                    # Website files (served by Express)
 │   ├── index.html            # Homepage
-│   ├── physical-security.html # Physical Security page
 │   ├── engineering-risk-assessment.html # Engineering Risk Assessment page
 │   ├── risk-management.html  # Risk Management page
 │   ├── management-consulting.html # Management Consulting page
@@ -196,7 +194,6 @@ vertixol/
 ## API Endpoints
 
 - `GET /` - Homepage
-- `GET /physical-security` - Physical Security page
 - `GET /engineering-risk-assessment` - Engineering Risk Assessment page
 - `GET /risk-management` - Risk Management page
 - `GET /management-consulting` - Management Consulting page

@@ -13,7 +13,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
 // Email configuration with OAuth2 for Google Workspace
-const transporter = nodemailer.createTransporter({
+const transporter = nodemailer.createTransport({
   service: "gmail",
   auth: {
     type: "OAuth2",
@@ -28,10 +28,6 @@ const transporter = nodemailer.createTransporter({
 // Set up routes for each page
 app.get("/", (req, res) => {
   res.sendFile(path.join(__dirname, "public", "index.html"));
-});
-
-app.get("/physical-security", (req, res) => {
-  res.sendFile(path.join(__dirname, "public", "physical-security.html"));
 });
 
 app.get("/engineering-risk-assessment", (req, res) => {
